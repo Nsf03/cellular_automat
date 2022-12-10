@@ -54,3 +54,5 @@ public:
 
 
 #endif //CELLULAR_AUTOMATA_CONFIG_IMPORT_H
+
+//ЕСЛИ ВДРУГ МУСОР

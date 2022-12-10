@@ -4,7 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 //#include <include/SFML/Graphics.hpp>
-#include "Grid.h"
+//#include "Grid.h"
 
 
 auto c0 = sf::Color(0, 0, 0);
