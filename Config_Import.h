@@ -8,6 +8,10 @@
 #include <iostream>
 #include <fstream>
 
+void Error(){
+    std::cout << "ERROR" << std::endl;
+}
+
 class Config_Import {
 private:
 public:
@@ -15,19 +19,19 @@ public:
         std::ifstream config(path);
 
         if (!config) {
-            std::cout << "ERROR" << std::endl;
+            Error();
             return nullptr;
         } else {
             int x;
             int y;
-            config >> x;
-            config >> y;
+            if(!(config >> x)){Error();};
+            if(!(config >> y)){Error();};
             int* file = new int[x*y + 2];
             file[0] = x;
             file[1] = y;
             for (int i = 0; i < x*y; i++) {
                 int tmp;
-                config >> tmp;
+                if(!(config >> tmp)){Error();};
                 file[i + 2] = tmp;
             }
             return file;
@@ -41,6 +45,14 @@ public:
     static int y_size(int* file) {
         return file[1];
     }
+
+    static void valid(std::string& path){
+        std::ifstream config(path);
+        bool file_is_ok = true;
+        char32_t check;
+
+
+}
 
     static int* data(int* file) {
         int size = x_size(file)* y_size(file);

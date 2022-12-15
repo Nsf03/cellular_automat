@@ -80,14 +80,14 @@ struct Grid {
     }
 
     friend std::ostream& operator<<(std::ostream& out, const Grid& g) {
-//        for (int i = 0; i < g.x_size*g.y_size; i++) {
-//            out << g.field[i].state << " ";
-//        }
-//        out << std::endl;
+
 
         for (int i = 0; i < g.y_size; i++) {
             for (int j = 0; j < g.x_size; j++) {
-                if (g.field[i*g.x_size + j].state) {out << "@" << " ";}
+                if (g.field[i*g.x_size + j].state == 1) {out << "@" << " ";}
+                if (g.field[i*g.x_size + j].state == 2) {out << "W" << " ";}
+                if (g.field[i*g.x_size + j].state == 3) {out << "M" << " ";}
+                if (g.field[i*g.x_size + j].state == 4) {out << "O" << " ";}
                 else {out << "." << " ";}
                 //out << g.field[i*g.x_size + j].state << " ";
             }
@@ -95,14 +95,6 @@ struct Grid {
         }
         out << std::endl;
 
-//        for (int i = 0; i < y_size; i++) {
-//            for (int j = 0; j < x_size; j++) {
-//                out << g.field[i*x_size + j].count_1 << " ";
-//            }
-//            out << std::endl;
-//        }
-//        out << std::endl;
-        out << std::endl;
         return out;
     };
 

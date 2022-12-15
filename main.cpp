@@ -7,7 +7,9 @@
 
 
 int main() {
-    Grid_1c g("gun.txt");
+    //Grid_1c g("gun.txt");
+    Grid_2c g("head.txt");
+    //Grid_4c g("4.txt")
     std::cout << "If you want to see life in the console, press Y, else press anything";
     char console_char;
     std::cin >> console_char;
@@ -19,7 +21,7 @@ int main() {
     auto test_rectangles =  new sf::CircleShape[10];
     auto vis_params = make_window(g.x_size, g.y_size, x_max, y_max, cell_size_max);
 
-    unsigned int steps = 5000;
+    unsigned int steps = 100000;
     int step = 0;
     float cell_size=vis_params.size;
     sf::RenderWindow window(sf::VideoMode(vis_params.x, vis_params. y), "SFML Application");
