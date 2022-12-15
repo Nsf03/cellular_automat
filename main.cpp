@@ -7,9 +7,10 @@
 
 
 int main() {
-    //Grid_1c g("gun.txt");
-    Grid_2c g("head.txt");
-    //Grid_4c g("4.txt")
+    //Grid_1c g("gun.txt"); //1 color
+    Grid_2c g("head.txt"); //2 color
+    //Grid_4c g("4.txt") //3 color
+    //Grid_1c g("bad.txt"); //error
     std::cout << "If you want to see life in the console, press Y, else press anything";
     char console_char;
     std::cin >> console_char;
