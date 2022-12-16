@@ -8,7 +8,7 @@
 
 int main() {
     //Grid_1c g("gun.txt"); //1 color
-    Grid_2c g("head.txt"); //2 color
+    Grid_2c g("test1.txt"); //2 color
     //Grid_4c g("4.txt") //3 color
     //Grid_1c g("bad.txt"); //error
     std::cout << "If you want to see life in the console, press Y, else press anything";
@@ -36,9 +36,9 @@ int main() {
         sf::Event event;
 
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed){
                 delete[] rectangles;
-                std::exit(0);
+                std::exit(0);};
                 //window.close();
 
         }
