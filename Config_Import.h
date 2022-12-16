@@ -8,8 +8,10 @@
 #include <iostream>
 #include <fstream>
 
+
 void Error(){
-    std::cout << "ERROR" << std::endl;
+    std::cout << "ERROR, WRONG FORMAT OF TXT FILE " << std::endl;
+    std::exit(0);
 }
 
 class Config_Import {
@@ -19,7 +21,8 @@ public:
         std::ifstream config(path);
 
         if (!config) {
-            Error();
+            std::cout << "ERROR, NO FILE " << path << std::endl;
+            std::exit(0);
             return nullptr;
         } else {
             int x;

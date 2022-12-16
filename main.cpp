@@ -37,7 +37,10 @@ int main() {
 
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
-                window.close();
+                delete[] rectangles;
+                std::exit(0);
+                //window.close();
+
         }
         //window.clear();
         for (int i = 0; i < g.y_size; i++) {
